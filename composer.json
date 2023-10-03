@@ -1,0 +1,18 @@
+{
+    "name": "ragnar/the-district",
+    "description": "voici votre commande :",
+    "autoload": {
+        "psr-4": {
+            "Ragnar\\TheDistrict\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ragnar",
+            "email": "enzolocquet@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    }
+}

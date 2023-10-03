@@ -1,0 +1,38 @@
+1-    Qu’est-ce qu’une donnée à caractère personnel ?
+        b. Une information relative à une personne physique uniquement
+
+2-    Quels sont les huit règles d’or RGPD que tout organisme se doit de respecter ?
+        a. La licéité des traitements
+        b. La finalité des traitements
+        d. La minimisation des données
+        e. La protection particulière des données sensibles
+        f. La qualité des processus
+        g. La durée de conservation limitée des données
+        h. Les mesures de sécurité des données
+        k. Le droit des personnes
+
+3-    Savez-vous comment le consentement d’un utilisateur de recevoir de la publicité par email doit être obtenu ?
+        c. S’il est collecté de façon spécifique par le biais d’une case à cocher
+
+4-    Est-il possible d’utiliser les données pour autre chose que leur finalité initiale sans en informer les personnes ?
+        b. Non
+
+5-    Est-il possible de collecter le numéro de sécurité sociale de n’importe qui ?
+        b. Non
+
+6-    Dans les catégories de données suivantes, laquelle ne fait pas partie de la définition des données sensibles du RGPD mais doit quand même être encadrée comme une catégorie sensible ?
+        d. Les données sur l’opinion religieuse ou philosophique
+
+7-    Est-il obligatoire de mettre en place des durées de conservation pour tous les traitements de données ?
+        a. Oui
+
+8-    Nommez les 3 principes de la sécurité des données :
+        a. Confidentialité
+        c. Intégrité
+        d. Disponibilité
+
+9-    Est-ce qu’il est obligatoire d’informer les personnes de ce que vous faites de leurs données avant de les collecter ?
+        a. Oui
+
+10-    De combien de temps disposez-vous pour répondre à une demande d’exercice de droits d’un utilisateur/client/usager sur ses données personnelles ?
+        c. Un mois
