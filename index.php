@@ -20,8 +20,8 @@
 	<?php 
 	// include 'functions.php';
 	require 'DAO.php';
-	$carouselContent = get_plats('localhost', 'resto', 'admin', 'admin1234');
-	$carouselCategorie = get_categories('localhost','resto','admin','admin1234');
+	$carouselContent = get_plats('localhost', 'locquet', 'locquet', 'momo3006');
+	$carouselCategorie = get_categories('localhost', 'locquet', 'locquet', 'momo3006');
 include('assets/exo_php/header.php');
 session_start();
 $nomuser=$_SESSION['email'];

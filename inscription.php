@@ -17,9 +17,9 @@
         } else {
             // Connexion à la base de données en utilisant PDO
             $servername = "localhost"; // Remplacez par le nom de votre serveur
-            $username = "admin"; // Remplacez par votre nom d'utilisateur de la base de données
-            $password_db = "admin1234"; // Remplacez par votre mot de passe de la base de données
-            $dbname = "resto"; // Remplacez par le nom de votre base de données
+            $username = "locquet"; // Remplacez par votre nom d'utilisateur de la base de données
+            $password_db = "momo3006"; // Remplacez par votre mot de passe de la base de données
+            $dbname = "locquet"; // Remplacez par le nom de votre base de données
             
             try {
                 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password_db);
