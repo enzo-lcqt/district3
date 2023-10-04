@@ -15,7 +15,7 @@
 
     <nav class="cc-navbar navbar navbar-expand-lg navbar-dark position-fixed w-100">
         <div class="container-fluid">
-            <a class="navbar-brand text-uppercase mx-4 py-3 fw-bolder" style='color:white;'>The District</a>
+            <a class="navbar-brand text-uppercase mx-4 py-3 fw-bolder" style='color:white;' href="index.php">The District</a>
             <button
                 class="navbar-toggler"
                 type="button"
