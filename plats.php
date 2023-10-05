@@ -12,7 +12,7 @@ $utilisateur_id = $resultat_utilisateur['id'];
 
 // Fonction pour récupérer les plats par catégorie
 function getPlatsParCategorie($db, $categorie_id) {
-    $requete_plats = $db->prepare("SELECT *, quantite FROM plat WHERE id_categorie = :categorie_id AND active = 'Yes'");
+    $requete_plats = $db->prepare("SELECT * FROM plat WHERE id_categorie = :categorie_id AND active = 'Yes'");
         $requete_plats->bindParam(':categorie_id', $categorie_id);
     $requete_plats->execute();
     return $requete_plats->fetchAll(PDO::FETCH_ASSOC);
