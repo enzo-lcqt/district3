@@ -8,7 +8,6 @@ require_once 'db_connexion.php';
 
 
 
-$utilisateur_id = $resultat_utilisateur['id'];
 
 // Fonction pour récupérer les plats par catégorie
 function getPlatsParCategorie($db, $categorie_id) {
