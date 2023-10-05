@@ -70,7 +70,7 @@ session_start();
                     <div class="card-body">
                         <h5 class="card-title">Classic</h5>
                         <p class="card-text">
-                            Un steak haché, une rondelle de cornichon, des rondelles de tomates et du cheddar fondant
+                        petit burger pour les petits apétit
                         </p>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ session_start();
                     <div class="card-body">
                         <h5 class="card-title">Hamburger</h5>
                         <p class="card-text">
-                            Un steak haché, une rondelle de cornichon, des oignons, des rondelles de tomates, du bacon et du cheddar fondant
+                        un steack haché, une rondelle de cornichon, des oignons , des rondelles de tomates, du bacon et du cheddar fondant 
                         </p>
                     </div>
                 </div>
@@ -94,7 +94,8 @@ session_start();
                     <div class="card-body">
                         <h5 class="card-title">Cheeseburger</h5>
                         <p class="card-text">
-                            Un steak haché, une rondelle de cornichon, des oignons, du bacon et du cheddar fondant
+                        Burger composé d’un bun’s du boulanger, deux steaks de 80g (origine française), 
+                        de deux tranches poitrine de porc fumée, de deux tranches cheddar affiné, salade et oignons confits. .
                         </p>
                     </div>
                 </div>
