@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Inclure le fichier de connexion à la base de données
-$servername = "amorce.org";
+$servername = "localhost";
 $username = "locquet";
 $password = "momo3006";
 $dbname = "locquet";
