@@ -47,7 +47,7 @@ try {
     $mail->Password = 'District80';
 
     // Destinataire de l'e-mail
-    $mail->setFrom('votreadresse@gmail.com', 'Votre Nom');
+    $mail->setFrom('distrcitdistrict@gmail.com', 'Enzo');
     $mail->addAddress($email, $nom); // Ajouter l'adresse du destinataire
     $mail->isHTML(true); // Activer le support HTML
 
