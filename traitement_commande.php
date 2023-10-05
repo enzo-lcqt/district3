@@ -3,7 +3,17 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Inclure le fichier de connexion à la base de données
-require_once 'db_connexion.php';
+$servername = "amorce.org";
+$username = "locquet";
+$password = "momo3006";
+$dbname = "locquet";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("La connexion à la base de données a échoué : " . $e->getMessage());
+}
 require_once 'Panier.php';
 
 // Inclure la bibliothèque PHPMailer
@@ -55,7 +65,7 @@ if ($requete->execute()) {
     $mail->Body    = 'Cher ' . $nom . ',<br><br>';
     $mail->Body    .= 'Votre commande a été enregistrée avec succès. Merci de votre achat !<br><br>';
     foreach ($_SESSION['panier'] as $plat_id => $quantite) {
-        $plat = getDetailsPlat($conn, $plat_id);
+        $plat = getDetailsPlat($db, $plat_id);
     
         if ($plat) {
             $mail->Body .= 'Nom de l\'article : ' . $plat['libelle'] . '<br>';

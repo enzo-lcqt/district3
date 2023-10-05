@@ -88,9 +88,7 @@ include('assets/exo_php/header.php'); // Inclut le fichier d'en-tête PHP
     </form>
 </section>
 
-<?php
-    session_start(); // Démarre la session PHP
-?>
+
 <script src="assets/js/contact.js"></script>
 </body>
 </html>
