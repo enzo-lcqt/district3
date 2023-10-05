@@ -31,64 +31,50 @@ $adresse = $_POST['adresse'];
 $articles = json_encode($_SESSION['panier']); // Convertir le panier en JSON
 $montant_total = isset($_SESSION['montant_total']) ? $_SESSION['montant_total'] : 0;
 
-// Préparer la requête SQL d'insertion
-$sql = "INSERT INTO finalisation (nom, email, telephone, adresse, articles, montant_total) VALUES (:nom, :email, :telephone, :adresse, :articles, :montant_total)";
+// Créer une instance de PHPMailer
+$mail = new PHPMailer(true);
 
-// Préparer la requête et l'exécuter
-$requete = $db->prepare($sql);
-$requete->bindParam(':nom', $nom);
-$requete->bindParam(':email', $email);
-$requete->bindParam(':telephone', $telephone);
-$requete->bindParam(':adresse', $adresse);
-$requete->bindParam(':articles', $articles);
-$requete->bindParam(':montant_total', $montant_total);
-
-if ($requete->execute()) {
-    // La commande a été enregistrée avec succès dans la base de données
-
-    // Configurer PHPMailer pour envoyer un e-mail via MailHog
-    $mail = new PHPMailer();
-
+try {
+    // Paramètres SMTP pour Gmail
     $mail->isSMTP();
-    $mail->Host = 'localhost'; // Adresse du serveur MailHog
-    $mail->Port = 1025; // Port de MailHog (par défaut)
-    $mail->SMTPAuth = false;
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'tls';
+
+    // Votre adresse Gmail et mot de passe
+    $mail->Username = 'distrcitdistrict@gmail.com';
+    $mail->Password = 'District80';
 
     // Destinataire de l'e-mail
-    $mail->setFrom('lobby8244@gmail.com', 'Enzo');
+    $mail->setFrom('votreadresse@gmail.com', 'Votre Nom');
     $mail->addAddress($email, $nom); // Ajouter l'adresse du destinataire
     $mail->isHTML(true); // Activer le support HTML
 
     // Sujet et corps de l'e-mail
-    $articles = $_SESSION['panier'];
     $mail->Subject = 'Confirmation de commande';
-    $mail->Body    = 'Cher ' . $nom . ',<br><br>';
-    $mail->Body    .= 'Votre commande a été enregistrée avec succès. Merci de votre achat !<br><br>';
+    $mail->Body = 'Cher ' . $nom . ',<br><br>';
+    $mail->Body .= 'Votre commande a été enregistrée avec succès. Merci de votre achat !<br><br>';
     foreach ($_SESSION['panier'] as $plat_id => $quantite) {
         $plat = getDetailsPlat($db, $plat_id);
-    
+
         if ($plat) {
             $mail->Body .= 'Nom de l\'article : ' . $plat['libelle'] . '<br>';
             $mail->Body .= 'Quantité : ' . $quantite . '<br>';
             $mail->Body .= 'Prix unitaire : $' . $plat['prix'] . '<br>';
             $mail->Body .= 'Sous-total : $' . ($quantite * $plat['prix']) . '<br><br>';
         }
-    }    $mail->Body    .= 'Montant total de la commande : $' . $montant_total . '<br><br>';
-    $mail->Body    .= 'Cordialement,<br>Enzo';
-
-    if ($mail->send()) {
-    unset($_SESSION['panier']); 
-        echo 'E-mail envoyé avec succès !';
-        header("Location: index.php");
-    exit();
-    } else {
-        echo 'Erreur lors de l\'envoi de l\'e-mail : ' . $mail->ErrorInfo;
     }
+    $mail->Body .= 'Montant total de la commande : $' . $montant_total . '<br><br>';
+    $mail->Body .= 'Cordialement,<br>Votre Nom';
 
-} else {
-    echo 'Une erreur s\'est produite lors de l\'enregistrement de la commande.';
-    
+    // Envoyer l'e-mail
+    $mail->send();
+    unset($_SESSION['panier']); // Effacer le panier après l'envoi
+    echo 'E-mail envoyé avec succès !';
+    header("Location: index.php");
+    exit();
+} catch (Exception $e) {
+    echo 'Erreur lors de l\'envoi de l\'e-mail : ' . $e->getMessage();
 }
-
-
 ?>
