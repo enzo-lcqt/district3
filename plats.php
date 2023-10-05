@@ -12,7 +12,7 @@ $utilisateur_id = $resultat_utilisateur['id'];
 
 // Fonction pour récupérer les plats par catégorie
 function getPlatsParCategorie($db, $categorie_id) {
-    $requete_plats = $db->prepare("SELECT * FROM plat WHERE id_categorie = :categorie_id AND active = 'Yes'");
+    $requete_plats = $db->prepare("SELECT *, quantite FROM plat WHERE id_categorie = :categorie_id AND active = 'Yes'");
         $requete_plats->bindParam(':categorie_id', $categorie_id);
     $requete_plats->execute();
     return $requete_plats->fetchAll(PDO::FETCH_ASSOC);
@@ -85,8 +85,7 @@ include('assets/exo_php/header.php');
             echo '<label for="quantite' . $plat['id'] . '">Quantité :</label>';
             echo '<input type="number" name="quantite" id="quantite' . $plat['id'] . '" class="form-control" min="0" value="0">';
             echo '</div>';
-            echo '<button type="submit" class="btn btn-primary ' . ($plat['quantite'] === 0 ? 'disabled' : '') . '">Ajouter au panier</button>';
-                        echo '</form>';
+            echo '<button type="submit" class="btn btn-primary ' . ($plat['quantite'] === 0 ? 'disabled' : '') . '">Ajouter au panier</button>';                        echo '</form>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
