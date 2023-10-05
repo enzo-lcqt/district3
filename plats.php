@@ -13,7 +13,7 @@ $utilisateur_id = $resultat_utilisateur['id'];
 // Fonction pour récupérer les plats par catégorie
 function getPlatsParCategorie($conn, $categorie_id) {
     $requete_plats = $conn->prepare("SELECT * FROM plat WHERE id_categorie = :categorie_id AND active = 'Yes'");
-    $requete_plats->bindParam(':categorie_id', $categorie_id);
+        $requete_plats->bindParam(':categorie_id', $categorie_id);
     $requete_plats->execute();
     return $requete_plats->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -57,7 +57,7 @@ include('assets/exo_php/header.php');
     <!-- Boucle pour afficher les plats par catégorie -->
     <?php
     // Récupérer les catégories
-    $requete_categories = $conn->prepare("SELECT * FROM categorie WHERE active = 'Yes'");
+    $requete_categories = $db->prepare("SELECT * FROM categorie WHERE active = 'Yes'");
     $requete_categories->execute();
     $categories = $requete_categories->fetchAll(PDO::FETCH_ASSOC);
 
@@ -66,7 +66,7 @@ include('assets/exo_php/header.php');
         echo '<h2 style="color: white;">' . $categorie['libelle'] . '</h2>';
 
         // Récupérer les plats par catégorie
-        $plats = getPlatsParCategorie($conn, $categorie['id']);
+        $plats = getPlatsParCategorie($db, $categorie['id']);
 
         // Afficher les plats
         echo '<div class="row">';

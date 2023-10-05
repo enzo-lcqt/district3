@@ -10,9 +10,5 @@ try {
     exit; 
 }
 
-$stmt = $db->prepare("SELECT * FROM locquet");
-$stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 
 ?>

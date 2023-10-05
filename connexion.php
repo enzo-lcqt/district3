@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Connexion à la base de données en utilisant PDO
     $servername = "localhost"; 
-    $username = "admin";
-    $password_db = "admin1234"; 
-    $dbname = "resto"; 
+    $username = "locquet";
+    $password_db = "momo3006"; 
+    $dbname = "locquet"; 
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password_db);
