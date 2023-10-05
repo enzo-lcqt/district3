@@ -25,7 +25,7 @@ $montant_total = isset($_SESSION['montant_total']) ? $_SESSION['montant_total'] 
 $sql = "INSERT INTO finalisation (nom, email, telephone, adresse, articles, montant_total) VALUES (:nom, :email, :telephone, :adresse, :articles, :montant_total)";
 
 // Préparer la requête et l'exécuter
-$requete = $conn->prepare($sql);
+$requete = $db->prepare($sql);
 $requete->bindParam(':nom', $nom);
 $requete->bindParam(':email', $email);
 $requete->bindParam(':telephone', $telephone);

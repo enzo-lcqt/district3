@@ -5,8 +5,8 @@ $password = "momo3006";
 $dbname = "locquet";
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("La connexion à la base de données a échoué : " . $e->getMessage());
 }
@@ -24,7 +24,7 @@ $demande = $_POST['demande'];
     // Insérer l'utilisateur dans la table
     $sql = "INSERT INTO utilisateur (nom, prenom, email, telephone, demande) VALUES (:nom, :prenom, :email, :telephone, :demande)";
 
-    $stmt = $conn->prepare($sql);
+    $stmt = $db->prepare($sql);
     $stmt->bindParam(':nom', $nom);
     $stmt->bindParam(':prenom', $prenom);
     $stmt->bindParam(':email', $email);

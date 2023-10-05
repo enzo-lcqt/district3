@@ -15,7 +15,7 @@ $demande = $_POST['demande'];
     // Insérer l'utilisateur dans la table
     $sql = "INSERT INTO utilisateur (nom, prenom, email, telephone, demande) VALUES ($nom, $prenom, $email, $telephone, $demande)";
 
-    $stmt = $conn->prepare($sql);
+    $stmt = $db->prepare($sql);
     $stmt->bindParam(":nom", $nom);
     $stmt->bindParam(":prenom", $prenom);
     $stmt->bindParam(":email", $email);
