@@ -44,7 +44,7 @@ try {
 
     // Votre adresse Gmail et mot de passe
     $mail->Username = 'distrcitdistrict@gmail.com';
-    $mail->Password = 'District80!';
+    $mail->Password = 'ggkp nkjm plmo kpwd';
 
     // Destinataire de l'e-mail
     $mail->setFrom('distrcitdistrict@gmail.com', 'Enzo');
