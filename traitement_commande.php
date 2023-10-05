@@ -51,7 +51,7 @@ if ($requete->execute()) {
 
     $mail->isSMTP();
     $mail->Host = 'localhost'; // Adresse du serveur MailHog
-    $mail->Port = 22; // Port de MailHog (par défaut)
+    $mail->Port = 1025; // Port de MailHog (par défaut)
     $mail->SMTPAuth = false;
 
     // Destinataire de l'e-mail
