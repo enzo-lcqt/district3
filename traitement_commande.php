@@ -63,6 +63,7 @@ try {
             $mail->Body .= 'Quantité : ' . $quantite . '<br>';
             $mail->Body .= 'Prix unitaire : $' . $plat['prix'] . '<br>';
             $mail->Body .= 'Sous-total : $' . ($quantite * $plat['prix']) . '<br><br>';
+            $mail->Body .= '<img src="' . $plat['image'] . '" alt="' . $plat['libelle'] . '"><br><br>';
         }
     }
     $mail->Body .= 'Montant total de la commande : $' . $montant_total . '<br><br>';
