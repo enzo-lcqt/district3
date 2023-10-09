@@ -47,8 +47,8 @@ $nomuser=$_SESSION['email'];
 							Restaurant TheDistrict à <br />
 							votre goût dans la ville de Amiens
 						</h1>
-						<form class="search-form">
-          <input type="text" placeholder="Rechercher..." />
+						<form class="search-form" action="recherche.php" method="GET">
+          <input type="text" name="query" placeholder="Rechercher..." required />
           <button type="submit">Rechercher</button>
         </form>
 					</div>
