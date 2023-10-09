@@ -50,9 +50,9 @@ ini_set('display_errors', 1);
 
 // Inclure le fichier de connexion à la base de données
 $servername = "localhost";
-$username = "admin";
-$password = "admin1234";
-$dbname = "resto";
+$username = "locquet";
+$password = "momo3006";
+$dbname = "locquet";
 
 try {
     $db = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
