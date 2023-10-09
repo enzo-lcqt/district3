@@ -46,7 +46,7 @@ $mail->isHTML(true);
 
 
 // Sujet du mail
-$mail->Subject = 'Test12 ';
+$mail->Subject = 'Test1 ';
 
 // Corps du message
 $mail->Body = "Merci " . $nom . " pour votre commande.<br><br>Voici ci-dessous le récapitulatif de votre commande :<br><br>";
